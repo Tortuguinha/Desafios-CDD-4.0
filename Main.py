@@ -4,6 +4,15 @@ from Classes import *
 
 pou = Pessoa("Fred", 70, 22)
 
-pou.comer()
-pou.dormir()
-pou.andar()
+#Atribuindo a opção do usuario escolher a ação
+
+escolha_inicio = input("Qual ação deseja fazer: Comer, Andar ou Dormir?")
+
+if escolha_inicio == "comer" or escolha_inicio == "Comer":
+    pou.comer()
+
+elif escolha_inicio == "andar" or escolha_inicio == "Andar":
+    pou.andar()
+
+elif escolha_inicio == "dormir" or escolha_inicio == "Dormir":
+    pou.dormir()

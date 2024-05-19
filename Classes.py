@@ -63,7 +63,7 @@ class Pessoa():
 
             self.comendo = False
             self.dormindo = False
-            print(f"O {self.nome} não pode andar agora pois está dormindo.")
+            print(f"O {self.nome} não pode falar agora pois está dormindo.")
 
         else:
             
