@@ -5,5 +5,5 @@ from Classes import *
 pou = Pessoa("Fred", 70, 22)
 
 pou.comer()
+pou.dormir()
 pou.andar()
-pou.falar()
