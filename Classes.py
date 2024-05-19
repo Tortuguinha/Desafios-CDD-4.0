@@ -29,7 +29,7 @@ class Pessoa():
             self.andando = False
             self.dormindo = False
             print(f"O {self.nome} está comendo no momento.")
-
+            
     def andar(self):
 
         if self.comendo == True:
@@ -71,3 +71,11 @@ class Pessoa():
             self.comendo = False
             self.andando = False
             print(f"O {self.nome} está dormindo no momento")
+
+#Adição de metodo de parada
+
+    def parar(self):
+        self.comendo = False
+        self.andando = False
+        self.dormindo = False
+        print(f"O {self.nome} parou a ação.")
