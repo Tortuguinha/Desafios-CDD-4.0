@@ -59,7 +59,7 @@ elif escolha_inicio == 3:
         pou.parar_dormir()
     
     elif escolha_parar == 2:
-        print(f"{pou.nome} ainda está comendo. Belo adormecido!")
+        print(f"{pou.nome} ainda está dormindo. Belo adormecido!")
 
         while escolha_parar == 2:
             escolha_parar = int(input("Deseja parar a ação? \n 1 para sim \n 2 para não."))
