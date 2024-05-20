@@ -1,10 +1,8 @@
 class Pessoa():
 
 #Criando o metodo construtor e seus parametros
-    def __init__ (self, nome, peso, idade):
+    def __init__ (self, nome):
         self.nome = nome
-        self.peso = peso
-        self.idade = idade
         self.comendo = False
         self.andando = False
         self.dormindo = False
@@ -12,70 +10,31 @@ class Pessoa():
 #Criação dos metodos de ações e suas verificações
     def comer(self):
 
-        if self.andando == True:
+        if self.andando == False and self.dormindo == False:
+            self.dormindo = True
+            print(f"{self.nome} está comendo agora.")
 
-            self.comendo = False
-            self.dormindo = False
-            print(f"O {self.nome} não comer agora pois está andando.")
-        
-        elif self.dormindo == True:
+#Metodos de parada para encerrar as ações
+    def parar_comer(self):
+        self.comendo = False
+        print(f"{self.nome} terminou de comer, ele está de barriga cheia")
 
-            self.comendo = False
-            self.andando = False
-            print(f"O {self.nome} não pode comer agora pois está dormindo.")
-        
-        else:
-            self.comendo = True
-            self.andando = False
-            self.dormindo = False
-            print(f"O {self.nome} está comendo no momento.")
-            
     def andar(self):
 
-        if self.comendo == True:
-
-            self.andando = False
-            self.dormindo = False
-            print(f"O {self.nome} não pode andar agora pois está comendo.")
-        
-        elif self.dormindo == True:
-
-            self.comendo = False
-            self.andando = False
-            print(f"O {self.nome} não pode andar agora pois está dormindo.")
-        
-        else:
-
+        if self.comendo == False and self.dormindo == False:
             self.andando = True
-            self.comendo = False
-            self.dormindo = False
-            print(f"O {self.nome} está andando no momento.")
+            print(f"{self.nome} está andando agora.")
+
+    def parar_andar(self):
+        self.andando = False
+        print(f"{self.nome} parou de andar, ele está cansado.")
 
     def dormir(self):
 
-        if self.comendo == True:
-
-            self.andando = False
-            self.dormindo = False
-            print(f"O {self.nome} não pode dormir agora pois está comendo.")
-        
-        elif self.andando == True:
-
-            self.comendo = False
-            self.dormindo = False
-            print(f"O {self.nome} não pode falar agora pois está dormindo.")
-
-        else:
-            
+        if self.comendo == False and self.andando == False:
             self.dormindo = True
-            self.comendo = False
-            self.andando = False
-            print(f"O {self.nome} está dormindo no momento")
+            print(f"{self.nome} está dormindo agora.")
 
-#Adição de metodo de parada
-
-    def parar(self):
-        self.comendo = False
-        self.andando = False
+    def parar_dormir(self):
         self.dormindo = False
-        print(f"O {self.nome} parou a ação.")
+        print(f"{self.nome} acordou.")

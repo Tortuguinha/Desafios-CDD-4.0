@@ -2,53 +2,55 @@ from Classes import *
 
 #Chamada da função, adição de valores aos parametros e chamada de metodos
 
-pou = Pessoa("Fred", 70, 22)
+pou = Pessoa("Fred")
 
 #Atribuindo a opção do usuario escolher a ação
 
-escolha_inicio = input("Qual ação deseja fazer: Comer, Andar ou Dormir?")
-escolha_parar = "a"
+escolha_inicio = int(input("Qual ação deseja fazer? \n 1 para Come \n 2 para andar \n 3 para dormir?"))
+escolha_parar = 0
 
-if escolha_inicio == "comer" or escolha_inicio == "Comer":
+if escolha_inicio == 1:
     pou.comer()
 
     #Opção do usuario parar a ação ou não
-    escolha_parar = input("Deseja parar a ação?")
+    escolha_parar = int(input("Deseja parar a ação? \n 1 para sim \n 2 para não."))
     
-    if escolha_parar == "Sim" or escolha_parar == "sim" or escolha_parar == "S" or escolha_parar == "s":
+    if escolha_parar == 1:
         pou.parar()
     
-    elif escolha_parar == "Não" or escolha_parar == "não" or escolha_parar == "n" or escolha_parar == "N":
-        print("A ação ainda esta aconcetendo.")
+    elif escolha_parar == 2:
+        print(f"{pou.nome} ainda está comendo.")
     
-    else:
+    elif escolha_parar != 0:
         print("Escolha inexistente.")
 
-elif escolha_inicio == "andar" or escolha_inicio == "Andar":
+elif escolha_inicio == 2:
     pou.andar()
-    escolha_parar = input("Deseja parar a ação?")
-    
-    if escolha_parar == "Sim" or escolha_parar == "sim" or escolha_parar == "S" or escolha_parar == "s":
-        pou.parar()
 
-    elif escolha_parar == "Não" or escolha_parar == "não" or escolha_parar == "n" or escolha_parar == "N":
-        print("A ação ainda esta aconcetendo.")
+    escolha_parar = int(input("Deseja parar a ação? \n 1 para sim \n 2 para não."))
     
-    else:
+    if escolha_parar == 1:
+        pou.parar()
+    
+    elif escolha_parar == 2:
+        print(f"{pou.nome} ainda está comendo.")
+    
+    elif escolha_parar != 0:
         print("Escolha inexistente.")
 
-elif escolha_inicio == "dormir" or escolha_inicio == "Dormir":
+elif escolha_inicio == 3:
     pou.dormir()
-    escolha_parar = input("Deseja parar a ação?")
     
-    if escolha_parar == "Sim" or escolha_parar == "sim" or escolha_parar == "S" or escolha_parar == "s":
+    escolha_parar = int(input("Deseja parar a ação? \n 1 para sim \n 2 para não."))
+    
+    if escolha_parar == 1:
         pou.parar()
-
-    elif escolha_parar == "Não" or escolha_parar == "não" or escolha_parar == "n" or escolha_parar == "N":
-        print("A ação ainda esta aconcetendo.")
     
-    else:
+    elif escolha_parar == 2:
+        print(f"{pou.nome} ainda está comendo.")
+    
+    elif escolha_parar != 0:
         print("Escolha inexistente.")
 
 else:
-    print("ação inexistente.")
+    print("Ação inexistente.")
