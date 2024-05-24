@@ -1,4 +1,4 @@
-from Classes import *
+from ClassePou import *
 
 #Chamada da função, adição de valores aos parametros e chamada de metodos
 
